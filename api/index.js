@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import v1Routes from "./src/api/v1/routes.js";
+import v1Routes from "../src/api/v1/routes.js";
 
 const app = express();
 
