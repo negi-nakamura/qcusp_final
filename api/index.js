@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import v1Routes from "../src/api/v1/routes.js";
 
 const app = express();
 
@@ -12,20 +13,14 @@ const app = express();
 //   })
 // );
 
-// app.use(
-//   cors({
-//     origin: "https://qcustudentportal.vercel.app",
-//     credentials: true
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://qcustudentportal.vercel.app",
+    credentials: true
+  })
+);
 
-app.use((err, req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://qcustudentportal.vercel.app");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.status(500).json({ message: err.message });
-});
-
-import v1Routes from "../src/api/v1/routes.js";
+app.options("*", cors());
 
 app.set("trust proxy", 1);
 
