@@ -20,8 +20,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options("*", cors());
-
 app.set("trust proxy", 1);
 
 app.use(express.json());
