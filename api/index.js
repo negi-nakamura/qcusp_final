@@ -2,17 +2,17 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import v1Routes from "../src/api/v1/routes.js";
-
 const app = express();
 
 app.use(
   cors({
     origin:
-      process.env.NODE_ENV === "production" ? process.env.PRODUCTION_URL : process.env.DEVELOPMENT_URL,
-      credentials: true
+    process.env.NODE_ENV === "production" ? process.env.PRODUCTION_URL : process.env.DEVELOPMENT_URL,
+    credentials: true
   })
 );
+
+import v1Routes from "../src/api/v1/routes.js";
 
 app.set("trust proxy", 1);
 
