@@ -9,9 +9,8 @@ const app = express();
 app.use(
   cors({
     origin:
-      "https://qcustudentportal.vercel.app",
-      // process.env.NODE_ENV === "production" ? process.env.PRODUCTION_URL : process.env.DEVELOPMENT_URL,
-      credentials: true,
+      process.env.NODE_ENV === "production" ? process.env.PRODUCTION_URL : process.env.DEVELOPMENT_URL,
+      credentials: true
   })
 );
 
