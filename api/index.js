@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://qcustudentportal.vercel.app/",
+    origin: "https://qcustudentportal.vercel.app",
     credentials: true
   })
 );
